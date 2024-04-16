@@ -53,32 +53,40 @@ function App() {
   };
 
   return (
-    <div className='flex flex-col justify-center items-center w-screen h-screen bg-lime-300'>
-      <h1 className='mb-9 h-10 w-1/2 bg-white text-black-500 text-4xl text-center'>Daily Spend Tracker</h1>
-      <main className=' h-96 w-11/12 flex justify-evenly items-center '>
+    <div
+      className='flex flex-col justify-center items-center w-screen h-screen bg-lime-300'>
+      <h1 
+        className='mb-9 h-10 w-1/2 bg-white text-black-500 text-4xl text-center'>
+        Daily Spend Tracker
+      </h1>
+      
+      <main 
+        className=' h-96 w-11/12 flex justify-evenly items-center '>
         <Chart spendings={spending} />
-
-        <div className='bg-red-100 my-20 border-x-2 border-y-2 rounded-lg flex h-64 w-2/6 justify-center items-center'>
+        <div 
+          className='bg-red-100 my-20 border-x-2 border-y-2 rounded-lg flex h-64 w-2/6 justify-center items-center'>
           <Table spendings={spending} onDelete={handleDeleteTask} />
         </div>
       </main>
-
-      <button onClick={openModel} className='mt-10 text-red-400 text-xl font-bold rounded-md bg-white border-rose-500 border-x-2 border-y-2 w-48 h-9'>Add Spending</button>
+      
+      <button
+        onClick={openModel} 
+        className='mt-10 text-red-400 text-xl font-bold rounded-md bg-white border-rose-500 border-x-2 border-y-2 w-48 h-9'>
+        Add Spending
+      </button>
 
       {/* Modal */}
       {isModalOpen && (
         <div className="modal p-4 border-x-2 border-y-2 mt-9 rounded-lg border-black w-5/6">
           <div className="modal-content">
-
             <h2 className='flex justify-between text-xl'>Add Spends
               <span className="close " onClick={closeModel}>&times;</span>
             </h2>
-            {/* Form for adding a task */}
+      
             <form
               onSubmit={handleAddTask}
               className='flex justify-evenly mt-4'
             >
-              {/* Important fields */}
               <input
                 type="text"
                 name="title"
